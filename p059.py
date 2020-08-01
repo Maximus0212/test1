@@ -43,10 +43,11 @@ class FASTQ:
         self.file_name = file_name
         self.read_num = 0
         self.base = {}
+
     def count_read_num(self):
         cnt=0
-    
         with open(self.file_name,'r') as handle:
+
             for line in handle:
                 if cnt % 4 == 0:
                     header = line.strip()
@@ -67,6 +68,8 @@ if __name__ == "__main__":
     if len(sys.argv) !=2:
         print(f"#usage: python {sys.argv[0]} [fasta]")
         sys.exit()
+
+
     file_name = sys.argv[1]
     t = FASTQ(file_name)
     t.count_read_num()
