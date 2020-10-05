@@ -33,10 +33,9 @@ for k,v in fasta_dict.items():
 #print(k_l)
 #print(v_l)
 
-for i in range(len(k_l)-1):
-    for j in range(i+1,len(k_l)):
-        if v_l[i][-3:] == v_l[j][:3]:
+for i in range(len(k_l)):
+    for j in range(0,len(k_l)):
+        if v_l[i][-3:] == v_l[j][:3] and i != j :
             print(k_l[i], k_l[j])
-
 
 
